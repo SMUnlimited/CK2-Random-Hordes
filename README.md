@@ -1,36 +1,36 @@
 # CK2-Random-Hordes
 A mod for crusader kings 2
 
-Randomly spawns a massive army for random AI chracters throughout the years.
-Now fear not just the mongols but any war focused character.
+Randomly spawns a massive army for random AI chracters throughout the years. 
+Now fear not just the mongols but any war focused character. 
 
-[B]Mechanics[/B]
-Every 15 years or so there is a 3% chance for an AI character to gather a massive army. There are a number of rules to the characters chosen:
-[list]
-[*]The ruler must be a Duke or a Count.
-[*]If the ruler is war focused (only if you own the way of life dlc) or has particularly agressive traits or ambition this chance can increase up to 10%. 
-[*]Non Reformed Pagan Rulers and tribes 25% more likely to be chosen. 
-[*]Christian rulers 50% less likely to be chosen.
-[*]Certain non ambitious or illness/health traits will prevent a character ever being chosen.
-[*]Characters must be between 16 and 60, although characters over the age of 45 are less likely to be chosen.
-[/list]
+##Mechanics 
+- Every 15 years or so there is a 3% chance for an AI character to gather a massive army. There are a number of rules to the characters chosen: 
+- The ruler must be a Duke or a Count. 
+- If the ruler is war focused (only if you own the way of life dlc) or has particularly agressive traits or ambition this chance can increase up to 10%. 
+- Non Reformed Pagan Rulers and tribes 25% more likely to be chosen. 
+- Christian rulers 50% less likely to be chosen. 
+- Certain non ambitious or illness/health traits will prevent a character ever being chosen. 
+- Characters must be between 16 and 60, although characters over the age of 45 are less likely to be chosen.
 
-The number of troops spawned scales based on the year and the characters current troop count but it will be between 11000 and 130000 troops.
+The number of troops spawned scales based on the year and the characters current troop count but it will be between 11000 and 130000 troops. 
 
-The ruler will also gain a cb to subjugate those of the same religion for 50 years (non reformed pagans can subjugate everyone). Subjugation will help prevent a game over when your same religion neighbour turns into a horde.
-During those 50 years no other horde will spawn.
-If the ruler dies, his heir will not have access to the subjugation cb anymore.
+The ruler will also gain a cb to subjugate those of the same religion for 50 years (non reformed pagans can subjugate everyone). Subjugation will help prevent a game over when your same religion neighbour turns into a horde. 
+During those 50 years no other horde will spawn. 
+If the ruler dies, his heir will not have access to the subjugation cb anymore. 
 
-The spawned armies will be slightly affected by attrition.
+The spawned armies will be slightly affected by attrition. 
 
-If a christian turns into a horde there is a likelyhood the pope will excommunicate him if he or she uses the subjugation cb especially if he or she is disliked by the pope.
+If a christian turns into a horde there is a likelyhood the pope will excommunicate him if he or she uses the subjugation cb especially if he or she is disliked by the pope. 
 
-A random horde will not spawn during the time frames of the major mongol horde events (aztecs excluded)
+A random horde will not spawn during the time frames of the major mongol horde events (aztecs excluded) 
 
-Hopefully the spawn rate and number of troops spawned strikes a good balance to give the hordes the ability to expand without it happening too often and without them easily taking out other empires of the time.
+Hopefully the spawn rate and number of troops spawned strikes a good balance to give the hordes the ability to expand without it happening too often and without them easily taking out other empires of the time. 
 
-[B]Known Issues[/B]
-If a ruler on an island becomes a horde, he may not have the ships to transport them to invade the world.
+##Known Issues 
+If a ruler on an island becomes a horde, he may not have the ships to transport them to invade the world. 
 
-[B]Mod Compatability[/B]
-High Compatability. This mod is just events and a new casus belli so should hopefully be compatible with most mods.
+##Mod Compatability 
+High Compatability. This mod is just events and a new casus belli so should hopefully be compatible with most mods. 
+
+Works with ck2 version 2.3.5, 2.4.1 "Provided for fun by The Strategy Master" 
