@@ -47,5 +47,5 @@ Before 1337ad 42000 min and 100000 max
 After 1337ad 50000 min and 130000 max
 
 V1.1
--Christian rulers are 50% less likely to be triggered as a horde.
--Non Reformed Pagan Rulers and tribal rulers 25% more likely to trigger as the horde.
+- Christian rulers are 50% less likely to be triggered as a horde.
+- Non Reformed Pagan Rulers and tribal rulers 25% more likely to trigger as the horde.
