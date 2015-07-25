@@ -1,5 +1,4 @@
-# CK2-Random-Hordes
-A mod for crusader kings 2
+# Crusader Kings 2 Random Hordes Mod
 
 Randomly spawns a massive army for random AI chracters throughout the years. 
 Now fear not just the mongols but any war focused character. 
