@@ -1,0 +1,742 @@
+###################################
+#
+# Random Horde Events
+#
+# 
+###################################
+
+namespace = SM
+
+# Event to remove the flag preventing new random hordes
+character_event = {
+	id = SM.2
+	#major = yes
+	hide_window = yes
+	
+	trigger = {
+		had_global_flag = {flag = ran_horde_active days = 18250}   # 50 years = 18250 days till next chance for horde spawning
+		religion = catholic
+		controls_religion = yes # Let it happen for the Pope - he's always around
+	}
+	immediate = {
+		clr_global_flag = ran_horde_active 
+		any_playable_ruler = {
+			limit = {
+				has_character_flag = hordling
+			}
+			clr_character_flag = hordling
+		}
+	}
+	option = {
+		name = SM.2.option
+	}
+	
+	mean_time_to_happen = {
+		years = 2
+	}
+}
+
+# Clear the character flag
+#character_event = {
+#	id = SM.3
+#	
+#	is_triggered_only = yes
+#	major = yes
+#	
+#	trigger = {
+#		has_character_flag = hordling
+#		only_capable = yes
+#		only_playable = yes
+#	}
+#	
+#	immediate = {
+#		clr_character_flag = hordling
+#		clr_global_flag = ran_horde_active 
+#	}
+#	
+#	option = {
+#		name = SM.3.option
+#	}
+#}
+
+# Event to schedule the horde spawning
+character_event = {
+	id = SM.4
+
+	ai = yes
+	only_rulers = yes
+	prisoner = no
+	only_independent = yes
+	min_age = 16
+	max_age = 60
+	only_capable = yes
+	only_playable = yes
+	
+	trigger = {
+		has_regent = no
+		in_revolt = no
+		is_landed = yes
+		NOT = {
+			higher_tier_than = DUKE
+			has_global_flag = ran_horde_active
+		}
+		#OR = {
+			#any_demesne_title = { has_de_jure_pretension = ROOT }
+			#has_horde_culture = no
+		#}
+		# Lets avoid occurring during the other horde events, not including aztecs
+		OR = {
+			NOT = { year = 960 }
+			AND = {
+				year = 1010
+				NOT = { year = 1215 }
+			}
+			AND = {
+				year = 1250
+				NOT = { year = 1360 }
+			}
+			year = 1405
+		}
+	}
+	
+	mean_time_to_happen = {
+		years = 15   # Every 15 years
+	}
+	
+	option = {
+		name = SM.4.option
+
+		random = {
+			chance = 3  # 3% chance
+		  modifier = {
+			factor = 2 #2
+			has_focus = focus_war
+		  }
+		  modifier = {
+			factor = 1.25
+			OR = {
+				AND = {
+					religion_group = pagan_group
+					is_reformed_religion = no
+				}
+				is_tribal = yes
+				mercenary = yes
+			}
+		  }
+		  modifier = {
+			factor = 1.5
+			OR = {
+				trait = ambitious
+				trait = strong
+			}
+		  }
+		  modifier = {
+			factor = 1.15
+			OR = {
+				trait = brilliant_strategist
+				trait = strategist
+				martial = 20
+			}
+		  }
+		  modifier = {
+			factor = 1.10
+			trait = skilled_tactician
+		  }
+		  modifier = {
+			factor = 1.05
+			trait = tough_soldier
+		  }
+		  modifier = {
+			factor = 0.5
+			OR = {
+				trait = stressed
+				religion_group = christian
+				is_reformed_religion = yes
+				age = 45
+			}
+		  }
+		  modifier = {
+			factor = 0
+			OR = {
+				NOT = {martial = 8}
+				trait = wounded
+				trait = maimed
+				trait = infirm
+				trait = drunkard
+				trait = slow
+				trait = weak
+				trait = clubfooted
+				trait = content
+				trait = shy
+				trait = craven
+				trait = depressed
+				has_disease = yes
+				is_ill = yes
+			}
+		  }
+		  narrative_event = { id = SM.1 }
+		}
+	}
+}
+
+# Event popup
+narrative_event = { 
+	id = SM.1
+	title = SM.1.title
+	desc = SM.1.desc
+	picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		capital_scope = {
+			ROOT = {
+				# Minimum 11000, max 30000
+				if = {
+					limit = {
+						NOT = {year = 867}
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 6.6  # 3000 troops the max troop count
+						match_min = 1000
+						match_max = 20000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 2000
+						match_max = 2000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 2000
+						match_max = 2000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1000
+						match_max = 1000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1000
+						match_max = 1000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1000
+						match_max = 1000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1000
+						match_max = 1000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1000
+						match_max = 1000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1000
+						match_max = 1000
+						attrition = 0.5
+					}
+				}
+				# Minimum 17000, max 45000
+				if = {
+					limit = {
+						NOT = {year = 1066}
+						year = 867
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 7.5  # 4000 troops the max troop count
+						match_min = 1500
+						match_max = 30000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1500
+						match_max = 1500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1500
+						match_max = 1500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1500
+						match_max = 1500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1500
+						match_max = 1500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1500
+						match_max = 1500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 1500
+						match_max = 1500
+						attrition = 0.5
+					}
+				}
+				# Minimum 34000, max 60000
+				if = {
+					limit = {
+						NOT = {year = 1241}
+						year = 1066
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 8.0  # 5000 troops the max troop count
+						match_min = 3000
+						match_max = 40000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 3000
+						match_max = 3000
+						attrition = 0.5
+					}
+				}
+				# Minimum 42000, max 100000
+				if = {
+					limit = {
+						NOT = {year = 1337}
+						year = 1241
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 12.0  # 5000 troops the max troop count
+						match_min = 4000
+						match_max = 60000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 4000
+						match_max = 4000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 4000
+						match_max = 4000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 4000
+						match_max = 4000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 4000
+						match_max = 4000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 4000
+						match_max = 4000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 4000
+						match_max = 4000
+						attrition = 0.5
+					}
+				}
+				# Minimum 50000, max 130000
+				if = {
+					limit = {
+						year = 1337
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 16.0  # 5000 troops the max troop count
+						match_min = 5000
+						match_max = 80000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 1.0 
+						match_min = 5000
+						match_max = 5000
+						attrition = 0.5
+					}
+				}
+			}
+		}
+		set_global_flag = ran_horde_active
+		set_character_flag = hordling # For the HORDE!!!
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}

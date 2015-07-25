@@ -1,0 +1,8 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+SM.1.desc;My liege, there are rumours that [Root.GetTitledFirstName] has gathered together a massive army of soldiers, mercenaries and loyalists. It is unknown for what purpose this army is for but it cannot be for peaceful purposes.;;;;;;;;;;;;;x
+SM.1.title;A new great power arises;;;;;;;;;;;;;x
+SM.1.option;All hail our glorious leader;;;;;;;;;;;;;x
+SM.1.option2;Troubling indeed...;;;;;;;;;;;;;x
+SM_HORDE_SUBJUGATION;Horde Subjugation;;;;;;;;;;;;;x
+WAR_NAME_HORDE_SUBJUGATION;Great Subjugation War;;;;;;;;;;;;;x
+horde_subjugation_desc;This CB allows you to wage a great expansionist war to subjugate a kingdom and his ruler to your growing empire. All titles of the target kingdom will be subjugated. An entire empire cannot be subjugated.;;;;;;;;;;;;;x
