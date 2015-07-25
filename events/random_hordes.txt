@@ -84,19 +84,6 @@ character_event = {
 			#any_demesne_title = { has_de_jure_pretension = ROOT }
 			#has_horde_culture = no
 		#}
-		# Lets avoid occurring during the other horde events, not including aztecs
-		OR = {
-			NOT = { year = 960 }
-			AND = {
-				year = 1010
-				NOT = { year = 1215 }
-			}
-			AND = {
-				year = 1250
-				NOT = { year = 1360 }
-			}
-			year = 1405
-		}
 	}
 	
 	mean_time_to_happen = {
@@ -153,6 +140,24 @@ character_event = {
 				religion_group = christian
 				is_reformed_religion = yes
 				age = 45
+			}
+		  }
+		  modifier = {
+			# Lets avoid occurring during the major horde events, not including aztecs
+			factor = 0.33
+			OR = {
+				AND = {
+				    year = 960
+					NOT = { year = 1010 }
+				}
+				AND = {
+				    year = 1215
+					NOT = { year = 1250 }
+				}
+				AND = {
+				    year = 1360
+					NOT = { year = 1405 }
+				}
 			}
 		  }
 		  modifier = {
