@@ -202,21 +202,6 @@ narrative_event = {
 					limit = {
 						NOT = {year = 867}
 					}
-					random_realm_province = {
-						limit = {
-							port = yes
-						}
-						ROOT = {
-							spawn_fleet = {
-								province = closest
-								owner = ROOT
-								disband_on_peace = no
-								troops = {
-									galleys = { 300 300 }
-								}
-							}
-						}
-					}
 					spawn_unit = {
 						province = PREV
 						home = PREV
@@ -322,21 +307,6 @@ narrative_event = {
 					limit = {
 						NOT = {year = 1066}
 						year = 867
-					}
-					random_realm_province = {
-						limit = {
-							port = yes
-						}
-						ROOT = {
-							spawn_fleet = {
-								province = closest
-								owner = ROOT
-								disband_on_peace = no
-								troops = {
-									galleys = { 450 450 }
-								}
-							}
-						}
 					}
 					spawn_unit = {
 						province = PREV
@@ -444,21 +414,6 @@ narrative_event = {
 						NOT = {year = 1241}
 						year = 1066
 					}
-					random_realm_province = {
-						limit = {
-							port = yes
-						}
-						ROOT = {
-							spawn_fleet = {
-								province = closest
-								owner = ROOT
-								disband_on_peace = no
-								troops = {
-									galleys = { 500 500 }
-								}
-							}
-						}
-					}
 					spawn_unit = {
 						province = PREV
 						home = PREV
@@ -565,21 +520,6 @@ narrative_event = {
 						NOT = {year = 1337}
 						year = 1241
 					}
-					random_realm_province = {
-						limit = {
-							port = yes
-						}
-						ROOT = {
-							spawn_fleet = {
-								province = closest
-								owner = ROOT
-								disband_on_peace = no
-								troops = {
-									galleys = { 500 500 }
-								}
-							}
-						}
-					}
 					spawn_unit = {
 						province = PREV
 						home = PREV
@@ -684,21 +624,6 @@ narrative_event = {
 				if = {
 					limit = {
 						year = 1337
-					}
-					random_realm_province = {
-						limit = {
-							port = yes
-						}
-						ROOT = {
-							spawn_fleet = {
-								province = closest
-								owner = ROOT
-								disband_on_peace = no
-								troops = {
-									galleys = { 500 500 }
-								}
-							}
-						}
 					}
 					spawn_unit = {
 						province = PREV
