@@ -6,3 +6,9 @@ SM.1.option2;Troubling indeed...;;;;;;;;;;;;;x
 SM_HORDE_SUBJUGATION;Horde Subjugation;;;;;;;;;;;;;x
 WAR_NAME_HORDE_SUBJUGATION;Great Subjugation War;;;;;;;;;;;;;x
 horde_subjugation_desc;This CB allows you to wage a great expansionist war to subjugate a kingdom and his ruler to your growing empire. All titles of the target kingdom will be subjugated. An entire empire cannot be subjugated.;;;;;;;;;;;;;x
+SM_normal_spawn_hordes;Encourage Random Hordes;;;;;;;;;;;;;x
+SM_normal_spawn_hordes_desc;Random hordes will spawn at the default number of troops;;;;;;;;;;;;;x
+SM_low_spawn_hordes;Restrict Random Hordes;;;;;;;;;;;;;x
+SM_low_spawn_hordes_desc;Random hordes will now spawn with a smaller number of troops;;;;;;;;;;;;;x
+SM_low_spawn_action;Smaller number of troops spawned by random hordes;;;;;;;;;;;;;x
+SM_normal_spawn_action;Default number of troops spawned by random hordes;;;;;;;;;;;;;x

@@ -91,7 +91,6 @@ character_event = {
 	}
 	
 	option = {
-		name = SM.4.option
 
 		random = {
 			chance = 3  # 3% chance
@@ -184,22 +183,236 @@ character_event = {
 	}
 }
 
-# Event popup
-narrative_event = { 
-	id = SM.1
-	title = SM.1.title
-	desc = SM.1.desc
-	picture = GFX_evt_battle
-	border = GFX_event_narrative_frame_war
-	major = yes
-	
+character_event = {
+	id = SM.6
+	hide_window = yes
 	is_triggered_only = yes
 	
 	option = {
-		name = SM.1.option
-		trigger = {
-			character = ROOT
+		capital_scope = {
+			ROOT = {
+				# Max 30000
+				if = {
+					limit = {
+						NOT = {year = 867}
+					}
+					random_realm_province = {
+						limit = {
+							port = yes
+						}
+						ROOT = {
+							spawn_fleet = {
+								province = closest
+								owner = ROOT
+								disband_on_peace = no
+								cannot_inherit = yes
+								troops = {
+									galleys = { 300 300 }
+								}
+							}
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 3.3 
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.77
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.43
+						match_max = 10000
+						attrition = 0.5
+					}
+				}
+				# max 45000
+				if = {
+					limit = {
+						NOT = {year = 1066}
+						year = 867
+					}
+					random_realm_province = {
+						limit = {
+							port = yes
+						}
+						ROOT = {
+							spawn_fleet = {
+								province = closest
+								owner = ROOT
+								disband_on_peace = no
+								cannot_inherit = yes
+								troops = {
+									galleys = { 450 450 }
+								}
+							}
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 3.3 
+						match_max = 15000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.77
+						match_max = 15000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.43
+						match_max = 15000
+						attrition = 0.5
+					}
+				}
+				# max 60000
+				if = {
+					limit = {
+						NOT = {year = 1241}
+						year = 1066
+					}
+					random_realm_province = {
+						limit = {
+							port = yes
+						}
+						ROOT = {
+							spawn_fleet = {
+								province = closest
+								owner = ROOT
+								disband_on_peace = no
+								cannot_inherit = yes
+								troops = {
+									galleys = { 500 500 }
+								}
+							}
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 3.3 
+						match_max = 20000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.77
+						match_max = 20000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.43
+						match_max = 20000
+						attrition = 0.5
+					}
+				}
+				# max 100000
+				if = {
+					limit = {
+						year = 1241
+					}
+					random_realm_province = {
+						limit = {
+							port = yes
+						}
+						ROOT = {
+							spawn_fleet = {
+								province = closest
+								owner = ROOT
+								disband_on_peace = no
+								cannot_inherit = yes
+								troops = {
+									galleys = { 500 500 }
+								}
+							}
+						}
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 3.3 
+						match_max = 30000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.77
+						match_max = 30000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.43
+						match_max = 30000
+						attrition = 0.5
+					}
+				}
+			}
 		}
+	}
+}
+
+# Spawns the standard amount of units
+character_event = {
+	id = SM.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	option = {
 		capital_scope = {
 			ROOT = {
 				# Minimum 11000, max 30000
@@ -811,6 +1024,40 @@ narrative_event = {
 					}
 				}
 			}
+		}
+	}
+	
+}
+
+# Standard Event popup
+narrative_event = { 
+	id = SM.1
+	title = SM.1.title
+	desc = SM.1.desc
+	picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		if = {
+			limit = {
+				has_global_flag = SM_low_spawn
+			}
+			character_event = { id = SM.6 }
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = SM_low_spawn
+				}
+			}
+			character_event = { id = SM.5 }
 		}
 		set_global_flag = ran_horde_active
 		set_character_flag = hordling # For the HORDE!!!
