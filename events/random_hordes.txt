@@ -216,7 +216,6 @@ narrative_event = {
 								province = closest
 								owner = ROOT
 								disband_on_peace = no
-								cannot_inherit = yes
 								troops = {
 									galleys = { 300 300 }
 								}
@@ -338,7 +337,6 @@ narrative_event = {
 								province = closest
 								owner = ROOT
 								disband_on_peace = no
-								cannot_inherit = yes
 								troops = {
 									galleys = { 450 450 }
 								}
@@ -460,7 +458,6 @@ narrative_event = {
 								province = closest
 								owner = ROOT
 								disband_on_peace = no
-								cannot_inherit = yes
 								troops = {
 									galleys = { 500 500 }
 								}
@@ -582,7 +579,6 @@ narrative_event = {
 								province = closest
 								owner = ROOT
 								disband_on_peace = no
-								cannot_inherit = yes
 								troops = {
 									galleys = { 500 500 }
 								}
@@ -703,7 +699,6 @@ narrative_event = {
 								province = closest
 								owner = ROOT
 								disband_on_peace = no
-								cannot_inherit = yes
 								troops = {
 									galleys = { 500 500 }
 								}
