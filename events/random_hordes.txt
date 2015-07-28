@@ -76,6 +76,7 @@ character_event = {
 		has_regent = no
 		in_revolt = no
 		is_landed = yes
+		is_tributary = no
 		OR = {
 			NOT = {
 				higher_tier_than = DUKE
