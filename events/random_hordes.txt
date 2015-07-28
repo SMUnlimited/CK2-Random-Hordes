@@ -76,8 +76,18 @@ character_event = {
 		has_regent = no
 		in_revolt = no
 		is_landed = yes
+		OR = {
+			NOT = {
+				higher_tier_than = DUKE
+			}
+			AND = {
+				is_nomadic = yes
+				NOT = {
+					realm_size = 6
+				}
+			}
+		}
 		NOT = {
-			higher_tier_than = DUKE
 			has_global_flag = ran_horde_active
 		}
 		#OR = {
