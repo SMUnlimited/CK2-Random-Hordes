@@ -853,21 +853,73 @@ character_event = {
 	
 }
 
-# Standard Event popup
-narrative_event = { 
+character_event = {
 	id = SM.1
-	title = SM.1.title
-	desc = SM.1.desc
-	picture = GFX_evt_battle
-	border = GFX_event_narrative_frame_war
-	major = yes
-	
 	is_triggered_only = yes
+	hide_window = yes
 	
 	option = {
-		name = SM.1.option
-		trigger = {
-			character = ROOT
+		random_list = {
+			10 = {
+				narrative_event = {id = SM.7}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					is_tribal = no
+				}
+				narrative_event = {id = SM.8}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					is_nomadic = no
+				}
+				narrative_event = {id = SM.9}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					is_feudal = no
+				}
+				narrative_event = {id = SM.10}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					is_republic = no
+				}
+				narrative_event = {id = SM.11}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					is_heretic = no
+				}
+				narrative_event = {id = SM.12}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						religion = catholic
+						trait = zealous
+					}
+				}
+				narrative_event = {id = SM.13}
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							religion = norse_pagan_reformed
+							religion = norse_pagan
+						}
+					}
+				}
+				narrative_event = {id = SM.14}
+			}
 		}
 		if = {
 			limit = {
@@ -885,6 +937,217 @@ narrative_event = {
 		}
 		set_global_flag = ran_horde_active
 		set_character_flag = hordling # For the HORDE!!!
+	}
+}
+
+# Tribal Event
+narrative_event = {
+	id = SM.8
+	title = SM.1.title
+	desc = SM.1.desc.tribe
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+		is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+# Nomadic Event
+narrative_event = {
+	id = SM.9
+	title = SM.1.title
+	desc = SM.1.desc.nomad
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+		is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+#Feudal Event
+narrative_event = {
+	id = SM.10
+	title = SM.1.title
+	desc = SM.1.desc.feudal
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+		is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+#Republic Event
+narrative_event = {
+	id = SM.11
+	title = SM.1.title
+	desc = SM.1.desc.republic
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+		is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+#Heretic Event
+narrative_event = {
+	id = SM.12
+	title = SM.1.title
+	desc = SM.1.desc.heretic
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+		is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+#Catholic Event
+narrative_event = {
+	id = SM.13
+	title = SM.1.title
+	desc = SM.1.desc.cath
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+#Norse Event
+narrative_event = {
+	id = SM.14
+	title = SM.1.title
+	desc = SM.1.desc.norse
+		picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+		is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
+# Standard Event popup
+narrative_event = { 
+	id = SM.7
+	title = SM.1.title
+	desc = SM.1.desc
+	picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
 		#character_event = { id = SM.3 days = 180}
 	}
 	option = {
