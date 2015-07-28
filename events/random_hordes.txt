@@ -189,7 +189,7 @@ character_event = {
 				is_ill = yes
 			}
 		  }
-		  narrative_event = { id = SM.1 }
+		  character_event = { id = SM.1 }
 		}
 	}
 }
@@ -871,9 +871,14 @@ character_event = {
 	
 	option = {
 		random_list = {
+			# General events
 			10 = {
 				narrative_event = {id = SM.7}
 			}
+			10 = {
+				narrative_event = {id = SM.15}
+			}
+			# Government events
 			10 = {
 				modifier = {
 					factor = 0
@@ -909,6 +914,7 @@ character_event = {
 				}
 				narrative_event = {id = SM.12}
 			}
+			# Religious events
 			10 = {
 				modifier = {
 					factor = 0
@@ -1143,11 +1149,39 @@ narrative_event = {
 	}
 }
 
+# Standard event 2
+narrative_event = { 
+	id = SM.15
+	title = SM.1.title
+	desc = SM.1.desc.gen2
+	picture = GFX_evt_battle
+	border = GFX_event_narrative_frame_war
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = SM.1.option
+		trigger = {
+			character = ROOT
+		}
+		#character_event = { id = SM.3 days = 180}
+	}
+	option = {
+		name = SM.1.option2
+		trigger = {
+			NOT= {
+				character = ROOT
+			}
+		}
+	}
+}
+
 # Standard Event popup
 narrative_event = { 
 	id = SM.7
 	title = SM.1.title
-	desc = SM.1.desc
+	desc = SM.1.desc.gen
 	picture = GFX_evt_battle
 	border = GFX_event_narrative_frame_war
 	major = yes
