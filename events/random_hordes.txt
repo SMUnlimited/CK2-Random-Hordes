@@ -14,7 +14,7 @@ character_event = {
 	hide_window = yes
 	
 	trigger = {
-		had_global_flag = {flag = ran_horde_active days = 18250}   # 50 years = 18250 days till next chance for horde spawning
+		had_global_flag = {flag = ran_horde_active days = 60}   # 50 years = 18250 days till next chance for horde spawning
 		religion = catholic
 		controls_religion = yes # Let it happen for the Pope - he's always around
 	}
@@ -32,7 +32,7 @@ character_event = {
 	}
 	
 	mean_time_to_happen = {
-		years = 2
+		months = 2
 	}
 }
 
@@ -98,7 +98,7 @@ character_event = {
 	}
 	
 	mean_time_to_happen = {
-		years = 15   # Every 15 years
+		months = 2   # Every 15 years
 	}
 	
 	option = {
@@ -229,8 +229,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 3.3 
-						match_max = 10000
+						match_mult = 2.0  # 3000 troops the max troop count
+						match_max = 6000
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -239,8 +239,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.77
-						match_max = 10000
+						match_mult = 0.66 
+						match_max = 6000
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -249,8 +249,28 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.43
-						match_max = 10000
+						match_mult = 0.4
+						match_max = 6000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.29 
+						match_max = 6000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.22 
+						match_max = 6000
 						attrition = 0.5
 					}
 				}
@@ -282,8 +302,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 3.3 
-						match_max = 15000
+						match_mult = 2.0  # 3750 troops the max troop count
+						match_max = 7500
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -292,8 +312,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.77
-						match_max = 15000
+						match_mult = 0.66 
+						match_max = 7500
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -302,8 +322,38 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.43
-						match_max = 15000
+						match_mult = 0.4
+						match_max = 7500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.29 
+						match_max = 7500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.22 
+						match_max = 7500
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.18
+						match_max = 7500
 						attrition = 0.5
 					}
 				}
@@ -335,8 +385,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 3.3 
-						match_max = 20000
+						match_mult = 2.0  # 5000 troops the max troop count
+						match_max = 10000
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -345,8 +395,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.77
-						match_max = 20000
+						match_mult = 0.66 
+						match_max = 10000
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -355,8 +405,38 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.43
-						match_max = 20000
+						match_mult = 0.4
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.29 
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.22 
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.18
+						match_max = 10000
 						attrition = 0.5
 					}
 				}
@@ -387,8 +467,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 3.3 
-						match_max = 30000
+						match_mult = 2.0  # 5000 troops the max troop count
+						match_max = 10000
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -397,8 +477,8 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.77
-						match_max = 30000
+						match_mult = 0.66 
+						match_max = 10000
 						attrition = 0.5
 					}
 					spawn_unit = {
@@ -407,10 +487,81 @@ character_event = {
 						owner = ROOT
 						disband_on_peace = no
 						match_character = ROOT
-						match_mult = 0.43
-						match_max = 30000
+						match_mult = 0.4
+						match_max = 10000
 						attrition = 0.5
 					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.29 
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.22 
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.18
+						match_max = 10000
+						attrition = 0.5
+					}
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.15
+						match_max = 10000
+						attrition = 0.5
+					}
+										spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.13
+						match_max = 10000
+						attrition = 0.5
+					}
+										spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.12
+						match_max = 10000
+						attrition = 0.5
+					}
+										spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = ROOT
+						disband_on_peace = no
+						match_character = ROOT
+						match_mult = 0.10
+						match_max = 10000
+						attrition = 0.5
+					}
+					
 				}
 			}
 		}
