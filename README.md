@@ -34,7 +34,7 @@ This option will work well with shattered balance mods where army sizes will sta
 ##Mod Compatability 
 High Compatability. This mod is just events and a new casus belli so should hopefully be compatible with most mods. 
 
-Works with ck2 version 2.3.5, 2.4.1 "Provided for fun by The Strategy Master" 
+Works with ck2 version 2.4.2 "Provided for fun by The Strategy Master" 
 
 ## Change Log
 v1.3
