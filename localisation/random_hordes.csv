@@ -1,6 +1,6 @@
 #CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
 SM.1.desc.gen;My liege, there are rumours that [Root.GetTitledFirstName] has gathered together a massive army of soldiers, mercenaries and loyalists and is ready to stake [Root.GetHerHis] claim on the world;;;;;;;;;;;;;x
-SM.1.desc.gen2;My liege, reports are coming in fast from fleeing villagers that [Root.GetTitledFirstName] has united a massive army to prepare a campaign of grand campaign of conquest. ;;;;;;;;;;;;;x
+SM.1.desc.gen2;My liege, reports are coming in fast from fleeing villagers that [Root.GetTitledFirstName] has united a massive army to prepare a grand campaign of conquest. ;;;;;;;;;;;;;x
 SM.1.desc.cath;My liege, a sect of priests have been spreading word that [Root.GetTitledFirstName] is the true emperor of the catholic faith and carries the true word of god. A massive army of people from neighbouring lands are converging to give [Root.GetTitledFirstName] their blessing and support;;;;;;;;;;;;;x
 SM.1.desc.nomad;My liege, what a site to behold, many great clans from the far east have made a blood pact with [Root.GetTitledFirstName]. This is a dangerous threat to the stability of our lands;;;;;;;;;;;;;x
 SM.1.desc.tribe;My liege, there is word that [Root.GetTitledFirstName] has united a number of major tribes and is planning to pillage, plunder and conquer all who would oppose there great rule ;;;;;;;;;;;;;x
