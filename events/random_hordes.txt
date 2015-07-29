@@ -14,7 +14,7 @@ character_event = {
 	hide_window = yes
 	
 	trigger = {
-		had_global_flag = {flag = ran_horde_active days = 60}   # 50 years = 18250 days till next chance for horde spawning
+		had_global_flag = {flag = ran_horde_active days = 18250}   # 50 years = 18250 days till next chance for horde spawning
 		religion = catholic
 		controls_religion = yes # Let it happen for the Pope - he's always around
 	}
@@ -32,7 +32,7 @@ character_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 2
+		years = 2
 	}
 }
 
@@ -98,7 +98,7 @@ character_event = {
 	}
 	
 	mean_time_to_happen = {
-		months = 2   # Every 15 years
+		years = 15   # Every 15 years
 	}
 	
 	option = {
