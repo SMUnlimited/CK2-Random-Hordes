@@ -34,7 +34,27 @@ horde_subjugation = {
 	can_use = {
 		ROOT = {
 				hidden_tooltip = {has_character_flag = hordling}
-				has_horde_culture = no 
+				OR = {
+					AND = {
+						has_dlc = "Horse Lords"
+						is_nomadic = no
+					}
+					AND = {
+						NOT = { has_dlc = "Horse Lords" }
+						has_horde_culture = no 
+					}
+				}
+				NOR = {
+					pays_tribute_to = FROM
+					any_liege = {
+						OR = {
+							pays_tribute_to = FROM
+							FROM = {
+								pays_tribute_to = PREV
+							}
+						}
+					}
+				}
 				NOT = { same_realm = FROM }
 				NOT = { is_liege_or_above = FROM }
 				OR = {
@@ -183,8 +203,10 @@ horde_subjugation = {
 				}
 			}
 		}
+		ROOT = {
+			prestige = 100
+		}
 		if = {
-			limit = { FROM = { tier = count } }
 			any_attacker = {
 				limit = { character = ROOT }
 				prestige = 100
@@ -192,28 +214,6 @@ horde_subjugation = {
 			any_attacker = {
 				limit = { not = { character = ROOT } }
 				hidden_tooltip = { participation_scaled_prestige = 100 }
-			}
-		}
-		if = {
-			limit = { FROM = { tier = duke } }
-			any_attacker = {
-				limit = { character = ROOT }
-				prestige = 150
-			}
-			any_attacker = {
-				limit = { not = { character = ROOT } }
-				hidden_tooltip = { participation_scaled_prestige = 150 }
-			}
-		}
-		if = {
-			limit = { FROM = { tier = king } }
-			any_attacker = {
-				limit = { character = ROOT }
-				prestige = 200
-			}
-			any_attacker = {
-				limit = { not = { character = ROOT } }
-				hidden_tooltip = { participation_scaled_prestige = 200 }
 			}
 		}
 		
@@ -224,6 +224,32 @@ horde_subjugation = {
 	}
 	
 	on_fail = {
+		FROM = {
+			prestige = 100
+			
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_nickname = no
+					}
+					random_list = {
+						10 = { give_nickname = nick_the_great }
+						10 = { give_nickname = nick_the_hammer }
+						10 = { give_nickname = nick_the_avenger }
+						10 = { give_nickname = nick_the_lion }
+						10 = { give_nickname = nick_the_bold }
+					}
+				}
+			}
+		}
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_prestige = 100
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 100 }
+		}
 		ROOT = {
 			if = {
 				limit = { FROM = { tier = count } }
@@ -260,7 +286,23 @@ horde_subjugation = {
 				value = 4.0
 			}
 		}
-		
+		FROM = {
+			prestige = 200
+			hidden_tooltip = {
+				if = {
+					limit = {
+						has_nickname = no
+					}
+					random_list = {
+						10 = { give_nickname = nick_the_great }
+						10 = { give_nickname = nick_the_hammer }
+						10 = { give_nickname = nick_the_avenger }
+						10 = { give_nickname = nick_the_lion }
+						10 = { give_nickname = nick_the_bold }
+					}
+				}
+			}
+		}
 		if = {
 			limit = { FROM = { tier = count } }
 			any_defender = {
@@ -297,7 +339,7 @@ horde_subjugation = {
 	}
 	
 	attacker_ai_victory_worth = {
-		factor = -1 # always accept
+		factor = -1
 	}
 	
 	attacker_ai_defeat_worth = {
