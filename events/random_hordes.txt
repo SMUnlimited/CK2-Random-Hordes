@@ -25,6 +25,7 @@ character_event = {
 				has_character_flag = hordling
 			}
 			clr_character_flag = hordling
+			remove_trait = adventurer
 		}
 	}
 	option = {
@@ -1103,6 +1104,7 @@ character_event = {
 			}
 			character_event = { id = SM.5 }
 		}
+		add_trait = adventurer
 		set_global_flag = ran_horde_active
 		set_character_flag = hordling # For the HORDE!!!
 	}
