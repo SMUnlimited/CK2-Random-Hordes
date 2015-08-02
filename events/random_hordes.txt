@@ -37,6 +37,19 @@ character_event = {
 	}
 }
 
+# Event from pope asking cathlolic ruler to reconsider his actions in the future
+#character_event = {
+#	id = SM.18
+	
+#	is_triggered_only = yes
+	
+#	option = {
+#		name = SM.18.option1
+#		opinion = { modifier = opinion_very_disappointed who = ROOT years = 5 
+#	}
+	
+#}
+
 # Clear the character flag
 #character_event = {
 #	id = SM.3
@@ -85,7 +98,8 @@ character_event = {
 			AND = {
 				is_nomadic = yes
 				NOT = {
-					realm_size = 6
+					realm_size = 3
+					num_of_vassals = 3
 				}
 			}
 		}
@@ -1109,6 +1123,9 @@ character_event = {
 		set_character_flag = hordling # For the HORDE!!!
 	}
 }
+
+# ----------- Message Horde Events --------------
+
 
 # Tribal Event
 narrative_event = {
