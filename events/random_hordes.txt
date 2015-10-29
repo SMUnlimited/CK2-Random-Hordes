@@ -98,7 +98,9 @@ character_event = {
 			AND = {
 				is_nomadic = yes
 				NOT = {
-					realm_size = 3
+					any_demesne_title = {
+						count = 5
+					}
 					num_of_vassals = 3
 				}
 			}
@@ -1119,6 +1121,7 @@ character_event = {
 			character_event = { id = SM.5 }
 		}
 		add_trait = adventurer
+		add_trait = ambitious
 		set_global_flag = ran_horde_active
 		set_character_flag = hordling # For the HORDE!!!
 	}
