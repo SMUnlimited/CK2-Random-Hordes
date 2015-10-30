@@ -34,9 +34,16 @@ This option will work well with shattered balance mods where army sizes will sta
 ##Mod Compatability 
 High Compatability. This mod is just events and a new casus belli so should hopefully be compatible with most mods. 
 
-Works with ck2 version 2.4.2 "Provided for fun by The Strategy Master" 
+Works with ck2 version 2.4.5 "Provided for fun by The Strategy Master" 
 
 ## Change Log
+v1.4
+- Further fix to nomad spawning
+- Characters now given adventurer and ambitious traits to entice the AI to expand
+- Fixed issue with CB accessible to all nomad characters
+- Fixed prestige issues with the CB
+- Characters can be spawned nicknames
+
 v1.3
 - Fixed spawning with nomadic characters
 - Hordes no longer spawn for tributaries
